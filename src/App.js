@@ -2,6 +2,7 @@ import React from 'react'
 import {Route,Link} from 'react-router-dom'
 import './App.css';
 import HomePage from './pages/homepage/hompage.component'
+import ShopPage from './pages/shop/shop.component'
 /*
 const TopicList=(props)=>{
   console.log(props)
@@ -36,20 +37,13 @@ const TopicList=(props)=>{
   
     }
     */
-   const HatsPage=(props)=>{
-    
-    return(
-      <div>
-      <h1>HatsPage</h1>
-    </div>
-    )
-  
-    }
+
 function App() {
   return (
     <div className="App">
+      
       <Route exact path='/' component={HomePage}/>
-      <Route exact path='/hats' component={HatsPage}/>
+      <Route exact path='/shop' component={ShopPage}/>
     </div>
   );
 }
