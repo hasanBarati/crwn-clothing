@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './pages/homepage/hompage.component'
 import ShopPage from './pages/shop/shop.component'
 import Header from './components/header/header-component'
+import SigninAndSignUpPage from './pages/signin-and-signup-page/signin-and-signup.component'
 /*
 const TopicList=(props)=>{
   console.log(props)
@@ -46,6 +47,7 @@ function App() {
       <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route exact path='/shop' component={ShopPage}/>
+          <Route exact path='/sigin' component={SigninAndSignUpPage}/>
       </Switch>
     
     </div>
