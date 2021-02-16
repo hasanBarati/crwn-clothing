@@ -1,9 +1,10 @@
 import React from 'react'
+import SignIn from '../../components/sign-in/sign-in-component'
 import './signin-and-signup.style.scss'
 function SigninAndSignUpPage() {
     return (
         <div className="sign-in-and-sign-up">
-            sign in
+           <SignIn />
         </div>
     )
 }
