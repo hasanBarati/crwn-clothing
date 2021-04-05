@@ -23,6 +23,7 @@ const mapDispatchToProps=dispatch=>({
 })*/
 const mapStateToProps=createStructuredSelector({
     itemCount:selectCartItemsCount
+    /*مجموع سبد خرید را نمایش میدهد */
 })
 
 export default connect (mapStateToProps,mapDispatchToProps)(CartIcon)
