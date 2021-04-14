@@ -5,7 +5,7 @@ import {firestore,convertCollectionsSnapshotToMap} from '../../firebase/firebase
 //     payload:collectionsMap
 // })
 
-export const fetchCollectionStart=()=>({
+export const fetchCollectionsStart=()=>({
     type:shopActionType.FETCH_COLLECTION_START,
  
 })
@@ -23,7 +23,7 @@ export const fetchCollectionFailur=errorMessage=>({
 export const fetchCollectionsStartAsync=()=>{
     return dispatch =>{
         const collectionRef=firestore.collection('collections')/*==>read collections data from database */
-         dispatch(fetchCollectionStart())
+         dispatch(fetchCollectionsStart())
         collectionRef.get().then( snapshot=>{
          const collectionsMap=convertCollectionsSnapshotToMap(snapshot)/*====>داده ها را به map تبذیل کرده و مبخواند*/
             dispatch(fetchCollectionsSucsses(collectionsMap))

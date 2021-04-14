@@ -4,7 +4,7 @@ import {Route} from 'react-router-dom'
 import CollectionPage from '../collection/collection.component'
 
 import {connect} from 'react-redux'
-import {fetchCollectionsStartAsync} from '../../redux/shop/shop.action'
+import {fetchCollectionsStart} from '../../redux/shop/shop.action'
 import {createStructuredSelector} from 'reselect'
 import {selectIsCollectionFetching,selectIsCollectionsLoaded} from '../../redux/shop/shop.selector'
 import  WithSpinner from '../../components/with-spinner/with-spinner.component'
@@ -15,8 +15,8 @@ class  ShopPage extends React.Component {
 
 
   componentDidMount(){
-    const {fetchCollectionsStartAsync}=this.props
-    fetchCollectionsStartAsync()
+    const {fetchCollectionsStart}=this.props
+    fetchCollectionsStart()
     // const collectionRef=firestore.collection('collections')/*==>read collections data from database */
     // const {updateColletions}=this.props  /***listen for update data from backend */   
     // collectionRef.onSnapshot(async snapshot=>{
@@ -47,7 +47,7 @@ const mapStateToProps=createStructuredSelector({
   isCollectionsLoaded:selectIsCollectionsLoaded
 })
 const mapDispatchToProps=(dispatch)=>({
-  fetchCollectionsStartAsync:()=>dispatch(fetchCollectionsStartAsync())
+  fetchCollectionsStart:()=>dispatch(fetchCollectionsStart())
 })
 
 // const mapDispatchToProps=(dispatch)=>({
