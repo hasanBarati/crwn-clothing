@@ -9,7 +9,7 @@ import rootSaga from './rootSaga'
 
 const sagaMiddleware=createSagaMiddleware()
 //const middleWare=[thunk]
-const middleWare=[sagaMiddleware]
+const middleWare=[sagaMiddleware,logger]
 
 export const store=createStore(rootReducer,applyMiddleware(...middleWare))
 sagaMiddleware.run(rootSaga)
