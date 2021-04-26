@@ -48,6 +48,14 @@ export class SignUp extends Component {
                 <h2 className='title'>i dont have an account</h2>
                 <span>sign up with email and password</span>
                 <form className='sign-up-form' onSubmit={this.handleSubmit}>
+                   <FormInput
+                        type='text'
+                        name='displayName'
+                        value={displayName}
+                        onChange={this.handleChange}
+                        label='Display Name'
+                        required
+                    />
                     <FormInput
                         type='email'
                         name='email'

@@ -1,5 +1,5 @@
 
-import { REGISTER } from 'redux-persist/es/constants'
+
 import userActionType from './user-action-type'
 const initial_state={
     currentUser:null,
