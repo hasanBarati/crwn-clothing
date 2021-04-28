@@ -9,7 +9,7 @@ export const googleSignInStart=()=>({
     type:userActionType.GOOGLE_SIGN_IN_START
 })
 
-export const googleSignInSuccess=(user)=>({
+/*export const googleSignInSuccess=(user)=>({
     type:userActionType.GOOGLE_SIGN_IN_SUCSSES,
     payload:user
 })
@@ -17,21 +17,40 @@ export const googleSignInSuccess=(user)=>({
 export const googleSignInFailure=(error)=>({
     type:userActionType.GOOGLE_SIGN_IN_FAILURE,
     payload:error
-})
+})*/
 
 
 
-export const emailSignInStart=emailAndPassword=>({
+export const signInSuccess = user => ({
+    type:userActionType.SIGN_IN_SUCCESS,
+    payload: user
+  });
+  
+  export const signInFailure = error => ({
+    type:userActionType.SIGN_IN_FAILURE,
+    payload: error
+  });
+
+
+
+export const emailSignInStart=(emailAndPassword)=>({
     type:userActionType.EMAIL_SIGN_IN_START,
     payload:emailAndPassword
 })
 
-export const emailSignInSuccess=(user)=>({
-    type:userActionType.EMAIL_SIGN_IN_SUCSSES,
-    payload:user
+export const signOutStart=()=>({
+    type:userActionType.SIGN_OUT_START
 })
 
-export const emailSignInFailure=(error)=>({
-    type:userActionType.EMAIL_SIGN_IN_FAILURE,
-    payload:error
+
+export const SignOutSuccess=()=>({
+  type:userActionType.SIGN_OUT_SUCCESS
+})
+
+export const SignOutFailure=error=>({
+  type:userActionType.SIGN_OUT_FAILURE,
+  payload:error
+})
+export const checkUserSession=()=>({
+    type:userActionType.CHECK_USER_ACTION
 })

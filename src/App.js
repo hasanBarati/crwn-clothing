@@ -12,11 +12,15 @@ import {connect} from 'react-redux'
 import {setCurrentUser} from './redux/user/user.action'
 import  CheckoutPage from './pages/checkout/checkout.component'
 import {selectCollectionForOverview} from './redux/shop/shop.selector'
+import {checkUserSession} from './redux/user/user.action'
 class  App extends React.Component{
  
   unsubscribeFormAuth=null
   componentDidMount(){
     const {setCurrentUser, collectionArray}=this.props
+
+    const {checkUserSession}=this.props
+    checkUserSession()
 //     this.unsubscribeFormAuth=auth.onAuthStateChanged(async userAuth=>{
 //       if(userAuth){
 //           const userRef=await createUserProfileDocument(userAuth)
@@ -67,6 +71,7 @@ const mapStateToProps=createStructuredSelector({
   collectionArray:selectCollectionForOverview
 })
 const mapDispatchToProps=dispatch=>({
-  setCurrentUser:user=>dispatch(setCurrentUser(user))
+  setCurrentUser:user=>dispatch(setCurrentUser(user)),
+  checkUserSession:()=>dispatch(checkUserSession())
 })
 export default connect(mapStateToProps,mapDispatchToProps)(App);
