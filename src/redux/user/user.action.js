@@ -54,3 +54,18 @@ export const SignOutFailure=error=>({
 export const checkUserSession=()=>({
     type:userActionType.CHECK_USER_ACTION
 })
+
+export const SignUpStart=()=>({
+  type:userActionType.SIGN_UP_START
+})
+
+export const SignUpSuccess=items=>({
+  type:userActionType.SIGN_UP_SUCCESS,
+  payload:items
+})
+
+
+export const SignUpFailure=error=>({
+  type:userActionType.SIGN_UP_FAILURE,
+  payload:error
+})
