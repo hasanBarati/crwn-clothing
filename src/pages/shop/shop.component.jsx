@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import Collectionoverviews from '../../components/collectionoverview/collectionoverview.component'
 import {Route} from 'react-router-dom'
 import CollectionPage from '../collection/collection.component'
@@ -11,34 +11,24 @@ import  WithSpinner from '../../components/with-spinner/with-spinner.component'
 
 const Collectionoverviewswithspinner= WithSpinner(Collectionoverviews)
 const CollectionPagewithspinner=WithSpinner(CollectionPage)
-class  ShopPage extends React.Component {
+const  ShopPage=({fetchCollectionsStart,match,isCollectionsFetching,isCollectionsLoaded})=> {
 
-
-  componentDidMount(){
-    const {fetchCollectionsStart}=this.props
+   useEffect(()=>{
     fetchCollectionsStart()
-    // const collectionRef=firestore.collection('collections')/*==>read collections data from database */
-    // const {updateColletions}=this.props  /***listen for update data from backend */   
-    // collectionRef.onSnapshot(async snapshot=>{
-  
+   },[fetchCollectionsStart])
+  // componentDidMount(){
+  //   const {fetchCollectionsStart}=this.props
+  //   fetchCollectionsStart()
+  // }
+ 
    
-    //   /**داده ها ر از پایگاه دادهمبخواند و  */
-    //  const collectionMap=convertCollectionsSnapshotToMap(snapshot)/*====>داده ها را به map تبذیل کرده و مبخواند*/
-    //  updateColletions(collectionMap)
-    
-    // })
-
-
-  }
-  render(){
-    const {match,isCollectionsFetching,isCollectionsLoaded}=this.props
     return (
       <div className='shop-page'>
       <Route exact path={`${match.path}`} render={(props)=><Collectionoverviewswithspinner isLoading={isCollectionsFetching} {...props} />}/>
       <Route exact path={`${match.path}/:collectionId`}  render={(props)=><CollectionPagewithspinner isLoading={!isCollectionsLoaded} {...props} />}/>
     </div>   
     )
-  }
+  
 
          
 }

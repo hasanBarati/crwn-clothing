@@ -55,13 +55,14 @@ export const checkUserSession=()=>({
     type:userActionType.CHECK_USER_ACTION
 })
 
-export const SignUpStart=()=>({
-  type:userActionType.SIGN_UP_START
+export const SignUpStart=userCredential=>({
+  type:userActionType.SIGN_UP_START,
+  payload:userCredential
 })
 
-export const SignUpSuccess=items=>({
+export const SignUpSuccess=({user,adithionalData})=>({
   type:userActionType.SIGN_UP_SUCCESS,
-  payload:items
+  payload:{user,adithionalData}
 })
 
 
